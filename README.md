@@ -1,7 +1,7 @@
 #### RottenTomatoes Demo
 
 #Time spent: 
-9 hours
+10 hours
 
 
 ## Requirements
@@ -33,6 +33,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 ---------
 * [Rotten Tomatoes API](http://developer.rottentomatoes.com/docs)
 * [Rotten Tomatoes Brand](http://developer.rottentomatoes.com/docs/brand_guidelines)
+* [LiceCap](http://www.cockos.com/licecap/)
 * [Icon Monster](http://iconmonstr.com/)
 * [CocoaPods](https://github.com/cocoapods/cocoapods)
 * [AFNetworking](https://github.com/AFNetworking/AFNetworking)
