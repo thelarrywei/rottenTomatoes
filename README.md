@@ -1,6 +1,7 @@
 #### RottenTomatoes Demo
 
-#Time spent: 9 hours
+#Time spent: 
+9 hours
 
 
 ## Requirements
@@ -24,6 +25,8 @@
 * [ ] Customize the navigation bar. (optional)
 
 ![GIF Walkthrough](rottenWalkthrough.gif)
+
+
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 
