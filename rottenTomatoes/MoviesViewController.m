@@ -74,7 +74,7 @@
 }
 - (void) loadRottenMovies {
     
-    
+    self.networkErrorView.hidden = YES;
     if (self.nextURL != self.currentURL) {
         [SVProgressHUD showWithStatus:@"Loading Movies..."];
         self.currentURL = self.nextURL;
@@ -98,8 +98,6 @@
         [self.tableView reloadData];
     }];
     
-    
-    NSLog(@"Reached here");
     [self.refreshControl endRefreshing];
 }
 
