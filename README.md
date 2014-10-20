@@ -29,4 +29,14 @@
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
+##Credits
+---------
+* [Rotten Tomatoes API](http://developer.rottentomatoes.com/docs)
+* [Rotten Tomatoes Brand](http://developer.rottentomatoes.com/docs/brand_guidelines)
+* [Icon Monster](http://iconmonstr.com/)
+* [CocoaPods](https://github.com/cocoapods/cocoapods)
+* [AFNetworking](https://github.com/AFNetworking/AFNetworking)
+* [SVProgress HUD](https://github.com/TransitApp/SVProgressHUD)
+
+
 
