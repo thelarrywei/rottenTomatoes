@@ -91,7 +91,7 @@
         }
         else {
             self.movies = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil][@"movies"];
-            NSLog(@"Refreshed");
+            NSLog(@"%@:",self.movies);
             
         }
         [NSTimer scheduledTimerWithTimeInterval:.5 target:self selector:@selector(dismissHUD:) userInfo:nil repeats:NO];
@@ -117,10 +117,40 @@
     MovieTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieTableViewCell"];
     
     NSDictionary *movie = self.movies[indexPath.row];
-    
+    NSArray *characters = movie[@"abridged_cast"];
+    NSLog(@"%@", characters);
+    NSString *cast = @"";
+    for (int i = 0; i < characters.count; i++) {
+        cast = [cast stringByAppendingString:characters[i][@"name"]];
+        if (i < characters.count - 1) {
+            cast = [cast stringByAppendingString:@", "];
+        }
+    }
+
     
     cell.titleLabel.text = movie[@"title"];
-    cell.synopsisLabel.text = [NSString stringWithFormat: @"%@: %@",movie[@"mpaa_rating"], movie[@"synopsis"]];
+    cell.ratingLabel.text = @"Rotten Tomatoes® Score";
+    cell.mpaaLabel.text = [NSString stringWithFormat:@"Rated %@ (%@)", movie[@"mpaa_rating"], movie[@"year"]];
+    cell.reviewLabel.text = [NSString stringWithFormat: @"Critics: %@%% \nAudience: %@%%",
+                               [movie valueForKeyPath:@"ratings.critics_score"],
+                                [movie valueForKeyPath:@"ratings.audience_score"]];
+    cell.synopsisLabel.text = [NSString stringWithFormat:@"Starring: %@", cast];
+    if ([[movie valueForKeyPath:@"ratings.critics_rating"] isEqual: @"Rotten"]) {
+        [cell.criticsImage setImage:[UIImage imageNamed:@"rotten"]];
+    }
+    else if ([[movie valueForKeyPath:@"ratings.critics_rating"] isEqual: @"Fresh"]) {
+        [cell.criticsImage setImage:[UIImage imageNamed:@"fresh"]];
+    }
+    else {
+        [cell.criticsImage setImage:[UIImage imageNamed:@"certfresh"]];
+    }
+    if ([[movie valueForKeyPath:@"ratings.audience_score"] intValue] < 60) {
+        [cell.audienceImage setImage:[UIImage imageNamed:@"rottenpop"]];
+    }
+    else {
+        [cell.audienceImage setImage:[UIImage imageNamed:@"freshpop"]];
+    }
+    
     
     NSString *imageURL = [movie valueForKeyPath:@"posters.thumbnail"];
     [cell.movieImage setImageWithURL: [NSURL URLWithString:imageURL]];

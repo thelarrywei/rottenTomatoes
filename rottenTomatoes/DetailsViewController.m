@@ -14,6 +14,10 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UILabel *synopsisLabel;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *reviewLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *criticsImage;
+@property (weak, nonatomic) IBOutlet UIImageView *audienceImage;
+@property (weak, nonatomic) IBOutlet UILabel *mpaaLabel;
 
 @end
 
@@ -30,9 +34,22 @@
     [self.movieImage setImageWithURL: [NSURL URLWithString:imageURLDetailed]];
     
 
+    //get cast
+    NSArray *characters = self.movie[@"abridged_cast"];
+    NSLog(@"%@", characters);
+    NSString *cast = @"";
+    for (int i = 0; i < characters.count; i++) {
+        cast = [cast stringByAppendingString:characters[i][@"name"]];
+        if (i < characters.count - 1) {
+            cast = [cast stringByAppendingString:@", "];
+        }
+    }
+
     //[self.movieImage sizeToFit];
     self.scrollView.delegate = self;
-    self.synopsisLabel.text = self.movie[@"synopsis"];
+    self.synopsisLabel.text = [NSString stringWithFormat: @"%@\n\n%@",
+                               cast,
+                               self.movie[@"synopsis"]];
     self.title = self.movie[@"title"];
     self.titleLabel.text = self.title;
     [self.synopsisLabel sizeToFit];
@@ -40,7 +57,30 @@
 
     [self.view bringSubviewToFront:self.scrollView];
     
-}
+    self.reviewLabel.text = [NSString stringWithFormat: @"%@%% \n%@%%",
+                             [self.movie valueForKeyPath:@"ratings.critics_score"],
+                             [self.movie valueForKeyPath:@"ratings.audience_score"]];
+    if ([[self.movie valueForKeyPath:@"ratings.critics_rating"] isEqual: @"Rotten"]) {
+        [self.criticsImage setImage:[UIImage imageNamed:@"rotten"]];
+    }
+    else if ([[self.movie valueForKeyPath:@"ratings.critics_rating"] isEqual: @"Fresh"]) {
+        [self.criticsImage setImage:[UIImage imageNamed:@"fresh"]];
+    }
+    else {
+        [self.criticsImage setImage:[UIImage imageNamed:@"certfresh"]];
+    }
+    if ([[self.movie valueForKeyPath:@"ratings.audience_score"] intValue] < 60) {
+        [self.audienceImage setImage:[UIImage imageNamed:@"rottenpop"]];
+    }
+    else {
+        [self.audienceImage setImage:[UIImage imageNamed:@"freshpop"]];
+    }
+    self.mpaaLabel.text = [NSString stringWithFormat: @"%@ (%@)\n%@ minutes",
+                           self.movie[@"mpaa_rating"],
+                           self.movie[@"year"],
+                           self.movie[@"runtime"]];
+    
+   }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     //[scrollView sizeToFit];

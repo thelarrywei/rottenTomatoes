@@ -23,6 +23,11 @@
 		DD605B1B19F36B3300E4B9E1 /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD605B1919F36B3300E4B9E1 /* DetailsViewController.xib */; };
 		DDE3C9AA19F4A03B005E073B /* dvd-32.png in Resources */ = {isa = PBXBuildFile; fileRef = DDE3C9A919F4A03B005E073B /* dvd-32.png */; };
 		DDE3C9AC19F4A0AE005E073B /* movie-32.png in Resources */ = {isa = PBXBuildFile; fileRef = DDE3C9AB19F4A0AE005E073B /* movie-32.png */; };
+		DDFBDE2319F4C592008A406B /* rotten.png in Resources */ = {isa = PBXBuildFile; fileRef = DDFBDE2119F4C592008A406B /* rotten.png */; };
+		DDFBDE2419F4C592008A406B /* fresh.png in Resources */ = {isa = PBXBuildFile; fileRef = DDFBDE2219F4C592008A406B /* fresh.png */; };
+		DDFBDE2719F4C6DD008A406B /* rottenpop.png in Resources */ = {isa = PBXBuildFile; fileRef = DDFBDE2519F4C6DD008A406B /* rottenpop.png */; };
+		DDFBDE2819F4C6DD008A406B /* freshpop.png in Resources */ = {isa = PBXBuildFile; fileRef = DDFBDE2619F4C6DD008A406B /* freshpop.png */; };
+		DDFBDE2C19F4DCF9008A406B /* certfresh.png in Resources */ = {isa = PBXBuildFile; fileRef = DDFBDE2B19F4DCF9008A406B /* certfresh.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +68,11 @@
 		DDE3C9A619F49FD4005E073B /* .DS_Store */ = {isa = PBXFileReference; lastKnownFileType = file; name = .DS_Store; path = ../../../Downloads/.DS_Store; sourceTree = "<group>"; };
 		DDE3C9A919F4A03B005E073B /* dvd-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dvd-32.png"; sourceTree = "<group>"; };
 		DDE3C9AB19F4A0AE005E073B /* movie-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "movie-32.png"; sourceTree = "<group>"; };
+		DDFBDE2119F4C592008A406B /* rotten.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rotten.png; sourceTree = "<group>"; };
+		DDFBDE2219F4C592008A406B /* fresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fresh.png; sourceTree = "<group>"; };
+		DDFBDE2519F4C6DD008A406B /* rottenpop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rottenpop.png; sourceTree = "<group>"; };
+		DDFBDE2619F4C6DD008A406B /* freshpop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = freshpop.png; sourceTree = "<group>"; };
+		DDFBDE2B19F4DCF9008A406B /* certfresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = certfresh.png; sourceTree = "<group>"; };
 		EDB157AADFFD6F29527EFAD6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,6 +158,11 @@
 				DD17D7C819EC71C10035FC9B /* MoviesViewController.h */,
 				DD17D7C919EC71C10035FC9B /* MoviesViewController.m */,
 				DD17D7CA19EC71C10035FC9B /* MoviesViewController.xib */,
+				DDFBDE2119F4C592008A406B /* rotten.png */,
+				DDFBDE2B19F4DCF9008A406B /* certfresh.png */,
+				DDFBDE2519F4C6DD008A406B /* rottenpop.png */,
+				DDFBDE2619F4C6DD008A406B /* freshpop.png */,
+				DDFBDE2219F4C592008A406B /* fresh.png */,
 				DD17D79E19EC70F00035FC9B /* Info.plist */,
 				DD17D79F19EC70F00035FC9B /* main.m */,
 				DDE3C9A619F49FD4005E073B /* .DS_Store */,
@@ -261,11 +276,16 @@
 			files = (
 				DD17D7A919EC70F00035FC9B /* Main.storyboard in Resources */,
 				DDE3C9AC19F4A0AE005E073B /* movie-32.png in Resources */,
+				DDFBDE2C19F4DCF9008A406B /* certfresh.png in Resources */,
+				DDFBDE2419F4C592008A406B /* fresh.png in Resources */,
+				DDFBDE2319F4C592008A406B /* rotten.png in Resources */,
+				DDFBDE2719F4C6DD008A406B /* rottenpop.png in Resources */,
 				DD17D80B19F0D8BF0035FC9B /* MovieTableViewCell.xib in Resources */,
 				DD17D7AE19EC70F00035FC9B /* LaunchScreen.xib in Resources */,
 				DD17D7AB19EC70F00035FC9B /* Images.xcassets in Resources */,
 				DD17D7CC19EC71C10035FC9B /* MoviesViewController.xib in Resources */,
 				DD605B1B19F36B3300E4B9E1 /* DetailsViewController.xib in Resources */,
+				DDFBDE2819F4C6DD008A406B /* freshpop.png in Resources */,
 				DDE3C9AA19F4A03B005E073B /* dvd-32.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
